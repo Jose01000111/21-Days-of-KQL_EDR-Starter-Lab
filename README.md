@@ -1,6 +1,7 @@
 # 28-Days of KQL Mastery Lab – Azure Cyber Range
 
-## 🚀 Lab Summary 
+<img width="429" height="398" alt="dO3hmFI" src="https://github.com/user-attachments/assets/235880af-458a-484e-b10e-800d06cc5695" />
+
 ## I am practicing this 28-day KQL lab inside **Josh Madakor’s Azure Cyber Range** 🖥️, focusing on hands-on security monitoring and log analysis. My goal is to master **Kusto Query Language (KQL)** 🔍 for threat detection, anomaly investigation, and incident analysis. I am using **Microsoft Sentinel** 🛡️ for SIEM operations and **Microsoft Defender for Endpoint** 💻 to collect and analyze endpoint telemetry, simulating real-world cybersecurity workflows in a controlled environment.  
 
 ## Week 1 – Understanding Tables & Basic Queries 📊
