@@ -1,6 +1,10 @@
-# 28-Days of KQL Mastery Lab – Azure Cyber Range
+<h1 align="center">📅 28-Days of KQL Mastery Lab – Azure ☁️ Cyber Range</h1>
 
-<img width="429" height="398" alt="dO3hmFI" src="https://github.com/user-attachments/assets/235880af-458a-484e-b10e-800d06cc5695" />
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/235880af-458a-484e-b10e-800d06cc5695" alt="dO3hmFI" width="429" height="398" />
+</p>
+
 
 ## I am practicing this 28-day KQL lab inside **Josh Madakor’s Azure Cyber Range** 🖥️, focusing on hands-on security monitoring and log analysis. My goal is to master **Kusto Query Language (KQL)** 🔍 for threat detection, anomaly investigation, and incident analysis. I am using **Microsoft Sentinel** 🛡️ for SIEM operations and **Microsoft Defender for Endpoint** 💻 to collect and analyze endpoint telemetry, simulating real-world cybersecurity workflows in a controlled environment.  
 
@@ -8,7 +12,7 @@
 
 | Day | Description |
 |-----|-------------|
-| [Day 1 – KQL and Workspace Introduction 📝](#) | Review the tables in your environment (SecurityEvent, Heartbeat, Syslog, AzureActivity). Examine column types and log formats. Take random samples to familiarize yourself with log structures. |
+| [Day 1 – KQL and Workspace Introduction 📝]() | Review the tables in your environment (SecurityEvent, Heartbeat, Syslog, AzureActivity). Examine column types and log formats. Take random samples to familiarize yourself with log structures. |
 | [Day 2 – Column Selection 📑](#) | Concentrate on fields like time, user, IP address, and event ID. Compare results when selecting all columns versus only necessary ones. |
 | [Day 3 – Basic Filtering 🔍](#) | Apply filters for single conditions (e.g., failed logins or service restarts). Observe patterns and identify the most active users or computers. |
 | [Day 4 – Sorting & Limiting Results 📈](#) | Sort events by timestamp or severity to prioritize recent or critical activities. Limit output to grasp patterns without data overload. |
