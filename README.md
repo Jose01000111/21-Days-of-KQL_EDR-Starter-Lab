@@ -23,8 +23,10 @@
 **Goal:** Learn what raw endpoint process telemetry looks like and how analysts start investigations.  
 **Tech Stack:**  
 > 💻 EDR: `DeviceProcessEvents | take 30`  
-> 🔍 KQL: `DeviceProcessEvents | project Timestamp, DeviceName, FileName | take 30`  
+> 🔍 KQL: `DeviceProcessEvents | project Timestamp, DeviceName, FileName | take 30`
+
 **Screenshot:** ![Temp Screenshot](#)  
+
 **Notes:**  
 > • Endpoint Telemetry: Data collected from processes, files, network, logons  
 > • Process Execution: Programs running on a system  
