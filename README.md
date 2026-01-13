@@ -1,4 +1,4 @@
-<h1 align="center">📅 28-Days of KQL/MS Defender Starter Lab – Azure ☁️ Cyber Range</h1>
+<h1 align="center">📅 21-Days of KQL/MS Defender Starter Lab – ☁️ Cyber Range</h1>
 
 
 <p align="center">
