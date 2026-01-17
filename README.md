@@ -26,13 +26,19 @@
 > 🔍 KQL: `DeviceProcessEvents | project Timestamp, DeviceName, FileName | take 30`  
 
 ## 🟢 Task A: Recent Process Execution Activity
+<img width="881" height="203" alt="GUNuVWP" src="https://github.com/user-attachments/assets/d32b5fd2-845f-492f-8794-acba5f480809" />
 
 ## 🟢 Task B: Key Process Fields Visibility
+<img width="903" height="458" alt="vQdBJu0" src="https://github.com/user-attachments/assets/4b7dfbb9-96e8-4c9b-9479-2b07ed0e709e" />
 
 ### 📝 Notes
-> • Endpoint Telemetry: Data from processes, files, network, logons  
-> • Process Execution: Programs running on a system  
-> • Threat hunting starts with understanding raw data
+> - DeviceProcessEvents contains all processes executed on endpoints.
+> - Task A: See recent processes to start investigations.
+> - Task B: Project key fields (Timestamp, DeviceName, FileName) to focus on important data.
+> - Understanding normal telemetry is the first step in threat hunting.
+> - Endpoint Telemetry: Data from processes, files, network, logons
+> - Process Execution: Programs running on a system
+> - Threat hunting starts with understanding raw data
 
 ---
 
@@ -43,13 +49,19 @@
 > 🔍 KQL: `DeviceProcessEvents | where Timestamp > ago(1h)`
 > 
 ## ⏰ Task A: Process Activity (Last 24 Hours)
+<img width="973" height="218" alt="nZh4WYZ" src="https://github.com/user-attachments/assets/077fadb2-8030-4a3b-8e2d-984f1ebde32d" />
 
 ## ⏰ Task B: Process Activity (Last 1 Hour)
+<img width="972" height="550" alt="upnuJEI" src="https://github.com/user-attachments/assets/97a08de0-e7c8-49f1-83e1-e1f434c594ee" />
 
 ### 📝 Notes
-> • Time Scoping: Focus on a defined period  
-> • Telemetry Noise: Benign events obscure threats  
-> • Most investigations start with “when” something happened
+> - Filter by time to reduce noise: last 24h vs last 1h.
+> - Task A: Look at daily process activity to understand baseline.
+> - Task B: Focus on very recent events to catch live suspicious activity.
+> - Time scoping helps separate relevant threats from benign events.
+> - Time Scoping: Focus on a defined period
+> - Telemetry Noise: Benign events obscure threats
+> - Most investigations start with “when” something happened
 
 ---
 
@@ -60,13 +72,19 @@
 > 🔍 KQL: `DeviceProcessEvents | summarize Count=count() by DeviceName`
 
 ## 📊 Task A: Most Frequently Executed Processes
+<img width="771" height="211" alt="zBcTkmy" src="https://github.com/user-attachments/assets/343c9cb1-c366-4a22-bf9f-213576b85a90" />
 
 ## 📊 Task B: Process Activity Volume per Device
+<img width="947" height="505" alt="od6T3Aq" src="https://github.com/user-attachments/assets/94431256-5b73-4b5c-b729-d287aaf583b9" />
 
 ### 📝 Notes
-> • Baseline: Picture of normal behavior  
-> • Frequency Analysis: How often events occur  
-> • Cannot label activity suspicious without knowing normal
+> - Summarize process counts to identify normal vs rare processes.
+> - Task A: Identify most frequently executed processes.
+> - Task B: Check activity volume per device to spot anomalies.
+> - Baselines are needed before labeling activity as suspicious.
+> - Baseline: Picture of normal behavior
+> - Frequency Analysis: How often events occur
+> - Cannot label activity suspicious without knowing normal
 
 ---
 
@@ -77,13 +95,19 @@
 > 🔍 KQL: `DeviceProcessEvents | where FileName == "cmd.exe"`  
 
 ## ⚡ Task A: PowerShell Execution Activity
+<img width="947" height="505" alt="od6T3Aq" src="https://github.com/user-attachments/assets/ccd0e118-48a0-4d6d-b2bb-051a0859a973" />
 
 ## ⚡ Task B: Command Prompt Execution Activity
+<img width="971" height="513" alt="ntap5DX" src="https://github.com/user-attachments/assets/bc2b861d-d2e6-485a-a8e8-e03014d01e70" />
 
 ### 📝 Notes
-> • Scripting Engines: PowerShell, CMD  
-> • Dual-Use Tools: Legitimate software abused by attackers  
-> • Modern attackers rely on built-in utilities
+> - Monitor high-risk tools: PowerShell (`powershell.exe`) and Command Prompt (`cmd.exe`).
+> - Task A: Track PowerShell usage across devices.
+> - Task B: Compare Command Prompt usage.
+> - Attackers often use built-in utilities; monitoring these is critical.
+> - Scripting Engines: PowerShell, CMD
+> - Dual-Use Tools: Legitimate software abused by attackers
+> - Modern attackers rely on built-in utilities
 
 ---
 
@@ -94,13 +118,20 @@
 > 🔍 KQL: `DeviceProcessEvents | project FileName, ParentProcessName, AccountName`  
 
 ## 🖥️ Task A: Process Command-Line Context
+<img width="977" height="567" alt="lBZATn5" src="https://github.com/user-attachments/assets/61170453-0ae7-41ff-a05a-3a0068394cde" />
 
 ## 🖥️ Task B: Parent Process and User Context
+<img width="673" height="233" alt="09JrYKs" src="https://github.com/user-attachments/assets/e23755b0-6d97-41c7-a85d-7a312b8a13d7" />
 
 ### 📝 Notes
-> • Command Line: Arguments used to start a process  
-> • Parent Process: Reveals process lineage  
-> • Context often reveals malicious intent
+> - CommandLine shows arguments used to start processes.
+> - ParentProcessName reveals process lineage.
+> - AccountName identifies which user executed the process.
+> - Task A: Review command-line details for suspicious flags or encoded commands.
+> - Task B: Check parent process and user context to spot anomalies.
+> - Command Line: Arguments used to start a process
+> - Parent Process: Reveals process lineage
+> - Context often reveals malicious intent
 
 ---
 
