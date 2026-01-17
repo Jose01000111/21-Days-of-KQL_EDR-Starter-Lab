@@ -25,11 +25,9 @@
 > 💻 EDR: `DeviceProcessEvents | take 30`  
 > 🔍 KQL: `DeviceProcessEvents | project Timestamp, DeviceName, FileName | take 30`  
 
-**Screenshot:**  
+## 🟢 Task A: Recent Process Execution Activity
 
-
-![Temp Screenshot](#)  
-
+## 🟢 Task B: Key Process Fields Visibility
 
 ### 📝 Notes
 > • Endpoint Telemetry: Data from processes, files, network, logons  
@@ -42,13 +40,11 @@
 **Goal:** Practice narrowing investigations to relevant time windows to reduce noise.  
 **Tech Stack:**  
 > ⏱️ EDR: `DeviceProcessEvents | where Timestamp > ago(24h)`  
-> 🔍 KQL: `DeviceProcessEvents | where Timestamp > ago(1h)`  
+> 🔍 KQL: `DeviceProcessEvents | where Timestamp > ago(1h)`
+> 
+## ⏰ Task A: Process Activity (Last 24 Hours)
 
-**Screenshot:**  
-
-
-![Temp Screenshot](#)  
-
+## ⏰ Task B: Process Activity (Last 1 Hour)
 
 ### 📝 Notes
 > • Time Scoping: Focus on a defined period  
@@ -61,13 +57,11 @@
 **Goal:** Identify common processes to establish a normal execution baseline.  
 **Tech Stack:**  
 > 📊 EDR: `DeviceProcessEvents | summarize Count=count() by FileName | order by Count desc`  
-> 🔍 KQL: `DeviceProcessEvents | summarize Count=count() by DeviceName`  
+> 🔍 KQL: `DeviceProcessEvents | summarize Count=count() by DeviceName`
 
-**Screenshot:**  
+## 📊 Task A: Most Frequently Executed Processes
 
-
-![Temp Screenshot](#)  
-
+## 📊 Task B: Process Activity Volume per Device
 
 ### 📝 Notes
 > • Baseline: Picture of normal behavior  
@@ -82,11 +76,9 @@
 > ⚠️ EDR: `DeviceProcessEvents | where FileName == "powershell.exe"`  
 > 🔍 KQL: `DeviceProcessEvents | where FileName == "cmd.exe"`  
 
-**Screenshot:**  
+## ⚡ Task A: PowerShell Execution Activity
 
-
-![Temp Screenshot](#)  
-
+## ⚡ Task B: Command Prompt Execution Activity
 
 ### 📝 Notes
 > • Scripting Engines: PowerShell, CMD  
@@ -101,11 +93,9 @@
 > 🧩 EDR: `DeviceProcessEvents | project Timestamp, DeviceName, FileName, ProcessCommandLine`  
 > 🔍 KQL: `DeviceProcessEvents | project FileName, ParentProcessName, AccountName`  
 
-**Screenshot:**  
+## 🖥️ Task A: Process Command-Line Context
 
-
-![Temp Screenshot](#)  
-
+## 🖥️ Task B: Parent Process and User Context
 
 ### 📝 Notes
 > • Command Line: Arguments used to start a process  
